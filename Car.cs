@@ -43,11 +43,15 @@ public class Program
     string stringMaxPrice = Console.ReadLine();
     int maxPrice = int.Parse(stringMaxPrice);
 
+    Console.WriteLine("Enter maximum miles: ");
+    string stringMaxMiles = Console.ReadLine();
+    int maxMiles = int.Parse(stringMaxMiles);
+
     List<Car> CarsMatchingSearch = new List<Car>();
 
       foreach (Car automobile in Cars)
       {
-        if(automobile.Price <= maxPrice)
+        if(automobile.Price < maxPrice && automobile.Miles < maxMiles)
         {
           CarsMatchingSearch.Add(automobile);
         }
